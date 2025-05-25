@@ -1,10 +1,12 @@
 package estructura.Clases;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
-public class Sucursal {
 
+public class Sucursal {
+    @Id
     private String nombre;
     private String domicilio;
     private String ciudad;

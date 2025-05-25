@@ -1,10 +1,12 @@
 package estructura.Clases;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 import java.util.Date;
 @Entity
 public class Empleado {
+    @Id
 
     private int legajo; //legajo es como un codigo de identificacion
     private String nombre;

@@ -1,9 +1,11 @@
 package estructura.Clases;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class Cliente {
+    @Id
 
     private int documento;
     private String tipoDocumento;

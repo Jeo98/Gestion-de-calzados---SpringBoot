@@ -6,6 +6,7 @@ import estructura.Repositorio.CalzadoRepositorio;
 import estructura.Repositorio.ClienteRepositorio;
 import estructura.Repositorio.EmpleadoRepositorio;
 import estructura.Repositorio.FacturaRepositorio;
+import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,7 @@ import java.util.Optional;
 import java.util.Scanner;
 
 @Service //capa de servicio, se encarga de la logica de negocio del CU
-
+@Id
 public class FacturaService {
 
 

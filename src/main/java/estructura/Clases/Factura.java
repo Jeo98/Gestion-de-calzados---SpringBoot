@@ -1,6 +1,8 @@
 package estructura.Clases;
 import estructura.Servicios.FacturaService;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
@@ -9,6 +11,10 @@ import java.util.Random;
 
 @Entity //entidad para base de datos, crea una.. no me acuerdo el nombre, pero tipo excel... ;D
 public class Factura {
+    @Id
+
+
+
     private Integer idUnico; //debe generarse de forma aleatoria y automatica al ejecutar una venta
     private LocalDate fecha; //fecha de forma local
     private String empleado;

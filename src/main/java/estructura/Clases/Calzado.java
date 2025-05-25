@@ -1,10 +1,12 @@
 package estructura.Clases;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
-public class Calzado {
 
+public class Calzado {
+    @Id
     private String codigo;
     private String descripcion;
     private String marca;
