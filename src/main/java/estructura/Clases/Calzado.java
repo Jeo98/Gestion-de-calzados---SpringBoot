@@ -1,5 +1,8 @@
 package estructura.Clases;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Calzado {
 
     private String codigo;

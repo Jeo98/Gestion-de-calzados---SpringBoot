@@ -1,5 +1,8 @@
 package estructura.Clases;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Cliente {
 
     private int documento;
