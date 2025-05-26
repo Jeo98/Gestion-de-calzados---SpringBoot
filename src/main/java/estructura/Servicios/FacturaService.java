@@ -2,6 +2,7 @@ package estructura.Servicios;
 
 import estructura.Clases.*;
 import estructura.DTO.FacturaDTO;
+import estructura.DTO.RenglonDTO;
 import estructura.Repositorio.CalzadoRepositorio;
 import estructura.Repositorio.ClienteRepositorio;
 import estructura.Repositorio.EmpleadoRepositorio;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -37,22 +39,35 @@ public class FacturaService {
     //Cargar factura
 
         public Factura cargarFactura(FacturaDTO dto) {
-            Cliente cliente = ClienteRepositorio.findById(dto.getClienteId()).orElseThrow(...);
-            Empleado empleado = empleadoRepo.findById(dto.getEmpleadoId()).orElseThrow(...);
+            // 1. Buscar entidades reales desde los IDs
+            Cliente cliente = clienteRepository.findById(dto.getClienteId())
+                    .orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
 
-            List<Renglon> renglones = Renglon.getRenglones().stream()
-                    .map(r -> {
-                        Calzado calzado = calzadoRepo.findById(r.getCalzadoId()).orElseThrow(...);
-                        return new Renglon(calzado, r.getCantidad());
-                    }).toList();
+            Empleado empleado = empleadoRepository.findById(dto.getEmpleadoId())
+                    .orElseThrow(() -> new RuntimeException("Empleado no encontrado"));
 
+            // 2. Crear los renglones de la factura
+            List<Renglon> renglones = new ArrayList<>();
+            for (RenglonDTO renglonDTO : dto.getRenglones()) {
+                Calzado calzado = calzadoRepository.findById(renglonDTO.getCalzadoId())
+                        .orElseThrow(() -> new RuntimeException("Calzado no encontrado"));
+
+                Renglon renglon = new Renglon();
+                renglon.setCantidad(renglonDTO.getCantidad());
+                renglon.setCalzado(calzado);
+                renglones.add(renglon);
+            }
+
+            // 3. Crear y cargar la factura
             Factura factura = new Factura();
-            factura.setCliente(cliente);
-            factura.setEmpleado(empleado);
-            factura.setRenglones(renglones);
             factura.setFecha(LocalDate.now());
+            factura.setCliente(cliente.getNombre());
+            factura.setEmpleado(empleado.getNombre());
+            factura.setRenglones(renglones);
 
+            // 4. Guardar en la base de datos
             return facturaRepositorio.save(factura);
+
 
 
     }

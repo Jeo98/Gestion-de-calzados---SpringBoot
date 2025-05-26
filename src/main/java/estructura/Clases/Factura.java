@@ -22,7 +22,9 @@ public class Factura {
     private List<Renglon> renglones; // lista de renglones que tendra la factura
     private FacturaService facturaService;
 
+    public Factura(){
 
+    }
     public Factura(Integer idUnico, LocalDate fecha, List<Renglon> renglones, String nombreEmpleado, String nombreCliente) { //constructor
         this.idUnico = idUnico;
         this.fecha = fecha;

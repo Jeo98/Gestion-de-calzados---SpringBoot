@@ -15,7 +15,7 @@ public class FacturaDTO {
         @NotNull
         private List<RenglonDTO> renglones;
 
-
+        
 }
 
 

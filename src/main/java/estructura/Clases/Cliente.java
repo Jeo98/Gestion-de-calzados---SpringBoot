@@ -11,6 +11,7 @@ public class Cliente {
     private String tipoDocumento;
     private Integer numeroDocumento;
     private Integer telefono;
+    private String nombre;
 
     
     public Cliente(int documento, String tipoDocumento, Integer numeroDocumento, Integer telefono) {
@@ -18,6 +19,14 @@ public class Cliente {
         this.tipoDocumento = tipoDocumento;
         this.numeroDocumento = numeroDocumento;
         this.telefono = telefono;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getDocumento() {
