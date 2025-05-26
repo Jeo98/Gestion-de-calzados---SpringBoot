@@ -7,7 +7,6 @@ import estructura.Repositorio.CalzadoRepositorio;
 import estructura.Repositorio.ClienteRepositorio;
 import estructura.Repositorio.EmpleadoRepositorio;
 import estructura.Repositorio.FacturaRepositorio;
-import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +17,7 @@ import java.util.Optional;
 import java.util.Scanner;
 
 @Service //capa de servicio, se encarga de la logica de negocio del CU
-@Id
+
 public class FacturaService {
 
 
@@ -39,7 +38,7 @@ public class FacturaService {
     //Cargar factura
 
         public Factura cargarFactura(FacturaDTO dto) {
-            // 1. Buscar entidades reales desde los IDs
+
             Cliente cliente = clienteRepository.findById(dto.getClienteId())
                     .orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
 
@@ -54,7 +53,7 @@ public class FacturaService {
 
                 Renglon renglon = new Renglon();
                 renglon.setCantidad(renglonDTO.getCantidad());
-                renglon.setCalzado(calzado);
+                renglon.setCalzado(calzado.getMarca());
                 renglones.add(renglon);
             }
 

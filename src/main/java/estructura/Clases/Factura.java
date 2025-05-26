@@ -20,6 +20,7 @@ public class Factura {
     private String empleado;
     private String cliente;
     private List<Renglon> renglones; // lista de renglones que tendra la factura
+
     private FacturaService facturaService;
 
     public Factura(){

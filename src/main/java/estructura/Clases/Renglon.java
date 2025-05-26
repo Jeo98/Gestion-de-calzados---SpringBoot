@@ -5,6 +5,9 @@ public class Renglon {
     private String calzado; //va el calzado que eligio el cliente para comprar
     private int cantidad;
 
+    public Renglon(){
+
+    }
     public Renglon(String renglon, int cantidad) {
         this.calzado = renglon;
         this.cantidad = cantidad;
