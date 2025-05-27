@@ -1,5 +1,7 @@
 package estructura.DTO;
 
+import estructura.Clases.Cliente;
+import estructura.Clases.Empleado;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.hibernate.annotations.NotFound;
 
@@ -16,18 +18,28 @@ public class FacturaDTO {
         @NotNull
         private List<RenglonDTO> renglones;
 
-
+        private Cliente cliente; //consulta
+        private Empleado empleado;//consulta
 
         public String getNombrecliente() {
-                return nombrecliente;
+                return cliente.getNombre();
         }
 
         public void setNombrecliente(String nombrecliente) {
                 this.nombrecliente = nombrecliente;
         }
 
+
+        public Empleado getEmpleado() {
+                return empleado;
+        }
+
+        public Cliente getCliente() {
+                return cliente;
+        }
+
         public String getNombreEmpleado() {
-                return nombreEmpleado;
+                return empleado.getNombre();
         }
 
         public void setNombreEmpleado(String nombreEmpleado) {

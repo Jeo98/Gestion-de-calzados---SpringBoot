@@ -17,8 +17,13 @@ public class Factura {
 
     private Integer idUnico; //debe generarse de forma aleatoria y automatica al ejecutar una venta
     private LocalDate fecha; //fecha de forma local
-    private String empleado;
-    private String cliente;
+
+    private String nombreEmpleado;//!!!!!TEMPORALES PARA TEST
+    private String Nombrecliente;//!!!!!TEMPORALES PARA TEST
+
+    private Empleado empleado;
+    private Cliente cliente;
+
     private List<Renglon> renglones; // lista de renglones que tendra la factura
 
     private FacturaService facturaService;
@@ -30,8 +35,8 @@ public class Factura {
         this.idUnico = idUnico;
         this.fecha = fecha;
         this.renglones = renglones;
-        this.empleado= nombreEmpleado;
-        this.cliente=nombreCliente;
+        this.nombreEmpleado = nombreEmpleado;
+        this.Nombrecliente =nombreCliente;
         //de empleado y cliente solo me interesa saber los nombres
     }
 
@@ -51,8 +56,8 @@ public class Factura {
 
         System.out.println("id: " + getIdUnico());
         System.out.println(fecha);
-        System.out.println("nombre empleado: "+ getEmpleado());
-        System.out.println("nombre cliente: " + getCliente());
+        System.out.println("nombre empleado: "+ getNombreEmpleado());
+        System.out.println("nombre cliente: " + getNombrecliente());
         System.out.println("--->calzados comprados<--- ");
         for (int i = 0; i < this.renglones.size(); i++) {
             System.out.println(getRenglones().get(i)); //Muestra el contenido de cada posicion de la lista tipo Renglon
@@ -76,20 +81,20 @@ public class Factura {
         this.fecha = fecha;
     }
 
-    public String getEmpleado() {
-        return empleado;
+    public String getNombreEmpleado() {
+        return nombreEmpleado;
     }
 
-    public void setEmpleado(String empleado) {
-        this.empleado = empleado;
+    public void setNombreEmpleado(String nombreEmpleado) {
+        this.nombreEmpleado = nombreEmpleado;
     }
 
-    public String getCliente() {
-        return cliente;
+    public String getNombrecliente() {
+        return Nombrecliente;
     }
 
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public void setNombrecliente(String nombrecliente) {
+        this.Nombrecliente = nombrecliente;
     }
 
     public List<Renglon> getRenglones() {

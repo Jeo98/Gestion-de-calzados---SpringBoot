@@ -39,10 +39,11 @@ public class FacturaService {
 
         public Factura cargarFactura(FacturaDTO dto) {
 
-            Cliente cliente = clienteRepository.findById(dto.getClienteId())
+
+            Cliente cliente = clienteRepository.findByDni(dto.getCliente().getDocumento())
                     .orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
 
-            Empleado empleado = empleadoRepository.findById(dto.getEmpleadoId())
+            Empleado empleado = empleadoRepository.findByDni(dto.getEmpleado().getDNI())
                     .orElseThrow(() -> new RuntimeException("Empleado no encontrado"));
 
             // 2. Crear los renglones de la factura
@@ -60,8 +61,8 @@ public class FacturaService {
             // 3. Crear y cargar la factura
             Factura factura = new Factura();
             factura.setFecha(LocalDate.now());
-            factura.setCliente(cliente.getNombre());
-            factura.setEmpleado(empleado.getNombre());
+            factura.setNombrecliente(cliente.getNombre());
+            factura.setNombreEmpleado(empleado.getNombre());
             factura.setRenglones(renglones);
 
             // 4. Guardar en la base de datos
