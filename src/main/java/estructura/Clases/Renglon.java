@@ -28,4 +28,8 @@ public class Renglon {
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
+
+    public String detalleRenglon() {
+        return "calzado='" + calzado + " | " +"cantidad=" + cantidad + "\n";
+    }
 }
