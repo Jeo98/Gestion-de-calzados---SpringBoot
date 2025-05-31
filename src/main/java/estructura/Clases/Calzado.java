@@ -16,6 +16,8 @@ public class Calzado {
     private float talle;
     private int stock;
 
+
+
     public Calzado(String codigo, String descripcion, String marca, float precioCosto, float precioVenta, String color, float talle, int stock) {
         this.codigo = codigo;
         this.descripcion = descripcion;
