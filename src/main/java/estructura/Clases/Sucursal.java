@@ -14,6 +14,7 @@ public class Sucursal {
 
 
 
+
     public Sucursal(String nombre, String domicilio, String ciudad) {
         this.nombre = nombre;
         this.domicilio = domicilio;
