@@ -7,15 +7,15 @@ import jakarta.persistence.Id;
 public class Cliente {
     @Id
 
-    private int documento;
+
     private String tipoDocumento;
     private Integer numeroDocumento;
     private Integer telefono;
     private String nombre;
 
     
-    public Cliente(int documento, String tipoDocumento, Integer numeroDocumento, Integer telefono) {
-        this.documento = documento;
+    public Cliente(String tipoDocumento, Integer numeroDocumento, Integer telefono) {
+
         this.tipoDocumento = tipoDocumento;
         this.numeroDocumento = numeroDocumento;
         this.telefono = telefono;
