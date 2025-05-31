@@ -29,12 +29,12 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public int getDocumento() {
-        return documento;
+    public Integer getDocumento() {
+        return numeroDocumento;
     }
 
-    public void setDocumento(int documento) {
-        this.documento = documento;
+    public void setDocumento(Integer documento) {
+        this.numeroDocumento = documento;
     }
 
     public String getTipoDocumento() {

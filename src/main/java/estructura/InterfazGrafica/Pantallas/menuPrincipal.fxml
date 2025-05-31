@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #f5be49;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="estructura.InterfazGrafica.Controladores.MenuPrincipalController">
+   <children>
+      <Pane prefHeight="720.0" prefWidth="1280.0">
+         <children>
+            <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/2.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="backMPButton" layoutX="1067.0" layoutY="618.0" mnemonicParsing="false" onAction="#backMPButtonOnAction" opacity="0.0" prefHeight="88.0" prefWidth="92.0" text="Button" />
+            <Button fx:id="cerrarVentanaButton" layoutX="20.0" layoutY="22.0" mnemonicParsing="false" onAction="#cerrarVentanaButtonOnAction" opacity="0.0" prefHeight="38.0" prefWidth="37.0" text="Button" />
+         </children>
+      </Pane>
+   </children>
+</StackPane>
