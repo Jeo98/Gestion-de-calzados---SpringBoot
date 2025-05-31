@@ -7,7 +7,6 @@ import jakarta.persistence.Id;
 public class Cliente {
     @Id
 
-    private int documento;
     private String tipoDocumento;
     private Integer numeroDocumento;
     private Integer telefono;
@@ -29,12 +28,12 @@ public class Cliente {
         this.nombre = nombre;
     }
 
-    public int getDocumento() {
-        return documento;
+    public Integer getDocumento() {
+        return numeroDocumento;
     }
 
-    public void setDocumento(int documento) {
-        this.documento = documento;
+    public void setDocumento(Integer documento) {
+        this.numeroDocumento = documento;
     }
 
     public String getTipoDocumento() {
